@@ -15,8 +15,10 @@
     </android.support.v4.widget.SwipeRefreshLayout>
 
     <Button
+        android:id="@+id/btnNewPhotos"
+        android:visibility="gone"
         android:textColor="@android:color/white"
-        android:background="@drawable/shape_round_rect_button_blue"
+        android:background="@drawable/selector_round_rect_button_blue"
         android:layout_marginTop="4dp"
         android:layout_centerHorizontal="true"
         android:text="New Photos"
