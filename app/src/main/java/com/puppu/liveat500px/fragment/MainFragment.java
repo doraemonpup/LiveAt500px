@@ -6,6 +6,8 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.AbsListView;
 import android.widget.Button;
 import android.widget.ListView;
@@ -215,10 +217,20 @@ public class MainFragment extends Fragment {
     // function to show button if some new photos are loaded
     public void showButtonNewPhotos() {
         btnNewPhotos.setVisibility(View.VISIBLE);
+        Animation anim = AnimationUtils.loadAnimation(
+                Contextor.getInstance().getContext(),
+                R.anim.zoom_fade_in
+        );
+        btnNewPhotos.startAnimation(anim);
     }
 
 
     public void hideButtonNewPhotos() {
         btnNewPhotos.setVisibility(View.GONE);
+        Animation anim = AnimationUtils.loadAnimation(
+                Contextor.getInstance().getContext(),
+                R.anim.zoom_fade_out
+        );
+        btnNewPhotos.startAnimation(anim);
     }
 }
